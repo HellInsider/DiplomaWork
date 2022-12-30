@@ -1,0 +1,2 @@
+..\..\map\heightMap.jpg
+..\..\map\coloredMap.jpg

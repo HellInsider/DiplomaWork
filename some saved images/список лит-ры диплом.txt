@@ -1,0 +1,17 @@
+https://habr.com/ru/company/pixonic/blog/479292/
+https://www.youtube.com/watch?v=orgXajB6z58&ab_channel=ComputerScienceCenter
+
+https://habr.com/ru/post/329246/ - генерация рельефа в юнити
+https://eprints.whiterose.ac.uk/153088/1/Real_world_Textured_terrain_generation_using_GANs_1_.pdf
+https://github.com/aladdinpersson/Machine-Learning-Collection#Generative-Adversarial-Networks
+https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9310217
+https://hal.archives-ouvertes.fr/hal-01583706/file/tog.pdf
+https://arxiv.org/pdf/2010.06411.pdf
+
+
+https://astrogeology.usgs.gov/search/map/Mars/Topography/HRSC_MOLA_Blend/Mars_HRSC_MOLA_BlendDEM_Global_200mp_v2  -карта марса
+https://habr.com/ru/post/332000/
+https://www.bizkit.ru/2019/12/04/15391/
+https://habr.com/ru/post/348000/
+https://habr.com/ru/company/ods/blog/344008/
+https://www.tensorflow.org/tutorials/generative/dcgan - гиф
