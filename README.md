@@ -7,6 +7,7 @@
 - [Пайплайн](#pipeline)
 - [Модель](#model)
 - [Результаты](#results)
+- [Исходники](#source)
 
 ## Вступление
 С каждым днем требования к качеству создаваемых ландшафтов в кинематографической и игровой промышленностях становятся все больше, а наиболее популярные в
@@ -17,10 +18,16 @@
 Целью данной работы является исследование применимости нейронных сетей для генерации реалистичных ландшафтных карт.
 
 ## Входные/Выходные данные
-На вход пайплайну подается карта высот некоторой поверхности с большой размерностью. 
+На вход пайплайну подается карта высот некоторой поверхности, удовлетворяющая следующим требованиям:   
+   + Большая размерность (Площадь более 10^7 пикселей)   
+   + Отсутстиве надписей или других мешающих артефактов
+   + Grayscale
+   
 В моем случае эксперименты проводились над картой высот Земли. Её разрешешение: 21600х10800.   
 На практике может быть подана любая карта. 
-Были проведены поиски карты высот Луны, но найденные картинки не соответствовали требованиям: либо на них были надписи, либо они были слишком маленького разрешения.
+Были проведены поиски карты высот Луны и Марса, но найденные картинки не соответствовали требованиям.
+
+![Карат Земли](https://github.com/HellInsider/DiplomaWork/blob/main/imgsForReadme/EarthMap.png)
     
 Выходными данными являются карты высот, построенные нейросетью.
    
@@ -41,11 +48,36 @@
 4. Визуализация результатов   
    Построение трехмерной модели в Unity   
   
-  Для ускорения процесса чаще всего ограничивались этапами 2 и 3.    
+  Для ускорения процесса чаще всего ограничивался этапами 2 и 3.    
 
 ## Модель   
 Из-за малого кол-ва данных (12000 картинок) и специфики задачи было решено использовать архитектуру GAN, которая представляет из себя комбинацию двух нейронок (генератор и дискриминатор).   
 Задача генератора - научиться генерировать картинки, схожие с обучающими.   
 Задача дискриминатора - научиться отличать сгенерированные картинки от исходных.   
+
+![GAN](https://github.com/HellInsider/DiplomaWork/blob/main/imgsForReadme/GAN.png)
+
 Были проведены эксперименты с двумя видами моделей: U-net и Sgan.   
-Вторая показала себя лучше.   
+Вторая показала себя лучше.  
+
+U-net:   
+![U-net](https://github.com/HellInsider/DiplomaWork/blob/main/imgsForReadme/U-net.png)   
+   
+SGAN:   
+![SGAN](https://github.com/HellInsider/DiplomaWork/blob/main/imgsForReadme/SGAN.png)
+
+## Результаты   
+Результаты работы модели SGAN:       
+![Sgan_result](https://github.com/HellInsider/DiplomaWork/blob/main/imgsForReadme/Sgan_result.png)   
+   
+![Sgan_res_unity](https://github.com/HellInsider/DiplomaWork/blob/main/imgsForReadme/Sgan_res_unity.png)   
+   
+Результаты работы модели U-net:      
+![U-net_result](https://github.com/HellInsider/DiplomaWork/blob/main/imgsForReadme/U-net_result.png)   
+   
+![U-net_res_unity](https://github.com/HellInsider/DiplomaWork/blob/main/imgsForReadme/U-net_res_unity.png)    
+
+## Исходники   
+Код нейронок можно найти [здесь](https://github.com/HellInsider/DiplomaWork/blob/main/DiplomaWork.ipynb)
+и [здесь](https://github.com/HellInsider/DiplomaWork/blob/main/DiplomaWork%20(U-net).ipynb).   
+Код к генератору [тут](https://github.com/HellInsider/DiplomaWork/tree/main/DataGenerator), а к визуализатору [тут](https://github.com/HellInsider/DiplomaWork/tree/main/UnityRenderer).
